@@ -11,7 +11,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerInfoResponse getCustomerInfo(CustomerInfoRequest customerInfoRequest) {
         CustomerInfoResponse customerInfoResponse = new CustomerInfoResponse();
-
+        customerInfoResponse.setName(customerInfoRequest.getName());
         return customerInfoResponse;
     }
 
