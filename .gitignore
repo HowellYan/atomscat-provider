@@ -1,3 +1,5 @@
 # Project exclude paths
 /atomscat-provider-api/target/
 /atomscat-provider-service/target/
+.idea
+atomscat-provider.iml
