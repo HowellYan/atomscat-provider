@@ -9,4 +9,6 @@ import com.atomscat.provider.response.CustomerInfoResponse;
 public interface CustomerService {
 
     CustomerInfoResponse getCustomerInfo(CustomerInfoRequest customerInfoRequest);
+
+    CustomerInfoResponse setRedis(CustomerInfoRequest customerInfoRequest);
 }

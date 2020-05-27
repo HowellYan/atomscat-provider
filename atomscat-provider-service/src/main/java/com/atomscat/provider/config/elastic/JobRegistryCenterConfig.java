@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Configuration;
 public class JobRegistryCenterConfig {
 
     @Bean(initMethod = "init")
-    public ZookeeperRegistryCenter regCenter(@Value("${elastic-job.servers}") final String serverList,
+    public ZookeeperRegistryCenter regCenter(@Value("${elastic-job.servers}") final String servers,
                                              @Value("${elastic-job.namespace}") final String namespace) {
-        return new ZookeeperRegistryCenter(new ZookeeperConfiguration(serverList, namespace));
+        return new ZookeeperRegistryCenter(new ZookeeperConfiguration(servers, namespace));
     }
 
 }
