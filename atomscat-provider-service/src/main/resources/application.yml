@@ -6,8 +6,8 @@ spring:
 
 dubbo:
   registry:
-    address: zookeeper://192.168.1.12:2181
+    address: zookeeper://127.0.0.1:2181
 
 elasticJob:
-  serverList: 192.168.1.12:2181
+  serverList: 127.0.0.1:2181
   namespace: atomscat_elastic_job
