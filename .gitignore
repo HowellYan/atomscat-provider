@@ -3,3 +3,5 @@
 /atomscat-provider-service/target/
 .idea
 atomscat-provider.iml
+atomscat-provider-service.iml
+atomscat-provider-api.iml
