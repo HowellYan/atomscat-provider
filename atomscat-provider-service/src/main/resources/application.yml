@@ -8,6 +8,6 @@ dubbo:
   registry:
     address: zookeeper://127.0.0.1:2181
 
-elasticJob:
-  serverList: 127.0.0.1:2181
+elastic-job:
+  servers: 127.0.0.1:2181
   namespace: atomscat_elastic_job

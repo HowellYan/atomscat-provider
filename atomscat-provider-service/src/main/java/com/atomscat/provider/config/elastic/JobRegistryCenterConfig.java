@@ -8,12 +8,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnExpression("'${elasticJob.serverList}'.length() > 0")
+@ConditionalOnExpression("'${elastic-job.servers}'.length() > 0")
 public class JobRegistryCenterConfig {
 
     @Bean(initMethod = "init")
-    public ZookeeperRegistryCenter regCenter(@Value("${elasticJob.serverList}") final String serverList,
-                                             @Value("${elasticJob.namespace}") final String namespace) {
+    public ZookeeperRegistryCenter regCenter(@Value("${elastic-job.servers}") final String serverList,
+                                             @Value("${elastic-job.namespace}") final String namespace) {
         return new ZookeeperRegistryCenter(new ZookeeperConfiguration(serverList, namespace));
     }
 
