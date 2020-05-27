@@ -29,7 +29,9 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerInfoResponse setRedis(CustomerInfoRequest customerInfoRequest) {
         stringRedisTemplate.opsForValue().set("key_string", customerInfoRequest.getName());
         redisTemplate.opsForValue().set("key_obj", customerInfoRequest);
-        return null;
+        CustomerInfoResponse customerInfoResponse = new CustomerInfoResponse();
+        customerInfoResponse.setName(stringRedisTemplate.opsForValue().get("key_string"));
+        return customerInfoResponse;
     }
 
 
