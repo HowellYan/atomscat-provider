@@ -12,6 +12,8 @@ spring:
 dubbo:
   registry:
     address: zookeeper://192.168.1.12:2181
+  consumer:
+    check: false
 
 elastic-job:
   servers: 192.168.1.12:2181
