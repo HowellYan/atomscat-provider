@@ -8,13 +8,25 @@ spring:
     password: admin123456
     database: 2
     port: 6379
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/atomscat-provider?allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: 123456
 
 dubbo:
   registry:
     address: zookeeper://127.0.0.1:2181
   consumer:
     check: false
+  protocol:
+    port: -1
+    name: dubbo
 
 elastic-job:
   servers: 127.0.0.1:2181
   namespace: atomscat_elastic_job
+
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.atomscat.provider.entity
+  type-handlers-package: com.atomscat.provider.entity
