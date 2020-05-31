@@ -1,6 +1,7 @@
 package com.atomscat.provider.serviceImpl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.atomscat.provider.config.annotation.DataSource;
 import com.atomscat.provider.entity.User;
 import com.atomscat.provider.mapper.UserMapper;
 import com.atomscat.provider.request.CustomerInfoRequest;
@@ -48,6 +49,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    @DataSource(name = "atomscat-provider")
     public List<CustomerInfoResponse> getCustomerInfoList(CustomerInfoRequest customerInfoRequest) {
         List<User> userList = userMapper.select();
         List<CustomerInfoResponse> customerInfoResponseList = new ArrayList<>();

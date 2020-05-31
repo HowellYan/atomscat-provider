@@ -8,10 +8,19 @@ spring:
     password: admin123456
     database: 2
     port: 6379
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/atomscat-provider?allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
-    username: root
-    password: 123456
+  datasources:
+    - key: atomscat-provider
+      url: jdbc:mysql://127.0.0.1:3306/atomscat-provider?allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+      username: root
+      password: 123456
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    - key: atomscat-customer
+      url: jdbc:mysql://127.0.0.1:3306/atomscat-customer?allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+      username: root
+      password: 123456
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
 
 dubbo:
   registry:
