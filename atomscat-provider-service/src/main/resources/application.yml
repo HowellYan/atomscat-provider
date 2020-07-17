@@ -24,7 +24,9 @@ spring:
 
 dubbo:
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: nacos://192.168.1.14:8848
+    parameters:
+      namespace: 5f5afe75-b943-40dc-ae5a-6f3e9ab24cf8
   consumer:
     check: false
   protocol:
@@ -32,7 +34,7 @@ dubbo:
     name: dubbo
 
 elastic-job:
-  servers: 127.0.0.1:2181
+  servers: 192.168.1.12:2181
   namespace: atomscat_elastic_job
 
 mybatis:
