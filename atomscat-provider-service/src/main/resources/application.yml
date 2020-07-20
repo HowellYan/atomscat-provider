@@ -41,3 +41,13 @@ mybatis:
   mapper-locations: classpath:/mapper/*Mapper.xml
   type-aliases-package: com.atomscat.provider.entity
   type-handlers-package: com.atomscat.provider.entity
+
+nacos:
+  config:
+    server-addr: nacos://192.168.1.14:8848
+    namespace: 5f5afe75-b943-40dc-ae5a-6f3e9ab24cf8
+    bootstrap:
+      enable: true
+    data-id: atomscat-provider.yaml
+    type: yaml
+    auto-refresh: true
