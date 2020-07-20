@@ -1,6 +1,6 @@
 package com.atomscat.provider.serviceImpl;
 
-import com.alibaba.dubbo.config.annotation.Service;
+
 import com.alibaba.fastjson.JSONObject;
 import com.atomscat.provider.config.annotation.DataSource;
 import com.atomscat.provider.entity.User;
@@ -9,6 +9,7 @@ import com.atomscat.provider.request.CustomerInfoRequest;
 import com.atomscat.provider.response.CustomerInfoResponse;
 import com.atomscat.provider.service.CustomerService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-@Service
+@DubboService
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
