@@ -1,6 +1,7 @@
 package com.atomscat.provider.serviceImpl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.alibaba.fastjson.JSONObject;
 import com.atomscat.provider.config.annotation.DataSource;
 import com.atomscat.provider.entity.User;
 import com.atomscat.provider.mapper.UserMapper;
@@ -59,6 +60,16 @@ public class CustomerServiceImpl implements CustomerService {
             customerInfoResponseList.add(customerInfoResponse);
         }
         return customerInfoResponseList;
+    }
+
+    @Override
+    public List<CustomerInfoResponse> test(CustomerInfoRequest customerInfoRequest) {
+        log.info(JSONObject.toJSONString(customerInfoRequest));
+        List<CustomerInfoResponse> list = new ArrayList<>();
+        CustomerInfoResponse customerInfoResponse = new CustomerInfoResponse();
+        customerInfoResponse.setName("test");
+        list.add(customerInfoResponse);
+        return list;
     }
 
 

@@ -15,4 +15,6 @@ public interface CustomerService {
     CustomerInfoResponse setRedis(CustomerInfoRequest customerInfoRequest);
 
     List<CustomerInfoResponse> getCustomerInfoList(CustomerInfoRequest customerInfoRequest);
+
+    List<CustomerInfoResponse> test(CustomerInfoRequest customerInfoRequest);
 }
