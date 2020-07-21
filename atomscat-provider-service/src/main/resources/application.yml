@@ -2,7 +2,6 @@ spring:
   application:
     name: atomscat-provider
 
-
 nacos:
   config:
     server-addr: 192.168.1.14:8848
@@ -11,6 +10,10 @@ nacos:
       enable: true
     data-id: atomscat-provider.yaml
     type: yaml
-    auto-refresh: true
-    enable-remote-sync-config: true
-    remote-first: true
+    ext-config:
+      - data-id: elastic-job
+        group: servers
+        type: yaml
+      - data-id: dubbo
+        group: provider
+        type: yaml

@@ -1,3 +1,5 @@
+Data Id: atomscat-provider.yaml
+Group: DEFAULT_GROUP
 ```
 spring:
   application:
@@ -23,6 +25,28 @@ spring:
       type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.cj.jdbc.Driver
 
+
+elastic-job:
+  namespace: atomscat_elastic_job
+
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.atomscat.provider.entity
+  type-handlers-package: com.atomscat.provider.entity
+
+```
+
+Data Id: elastic-job
+Group: servers
+```
+elastic-job:
+  servers: 192.168.1.12:2181
+```
+
+
+Data Id: dubbo
+Group: provider
+```
 dubbo:
   registry:
     address: nacos://192.168.1.14:8848
@@ -33,14 +57,17 @@ dubbo:
   protocol:
     port: -1
     name: dubbo
+```
 
-elastic-job:
-  servers: 192.168.1.12:2181
-  namespace: atomscat_elastic_job
-
-mybatis:
-  mapper-locations: classpath:/mapper/*Mapper.xml
-  type-aliases-package: com.atomscat.provider.entity
-  type-handlers-package: com.atomscat.provider.entity
-
+Data Id: dubbo
+Group: consumer
+```
+dubbo:
+  registry:
+    address: nacos://192.168.1.14:8848
+    parameters:
+      namespace: 5f5afe75-b943-40dc-ae5a-6f3e9ab24cf8
+    check: false
+  consumer:
+    check: false
 ```
