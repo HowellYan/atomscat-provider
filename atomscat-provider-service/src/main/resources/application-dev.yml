@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: atomscat-provider
+
+nacos:
+  config:
+    server-addr: 127.0.0.1:8848
+    namespace: 21e875ed-78fd-40a6-ac80-1fc202217097
+    bootstrap:
+      enable: true
+    data-id: atomscat-provider.yaml
+    type: yaml
+    ext-config:
+      - data-id: elastic-job
+        group: servers
+        type: yaml
+      - data-id: dubbo
+        group: provider
+        type: yaml

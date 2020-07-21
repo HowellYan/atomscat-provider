@@ -71,3 +71,7 @@ dubbo:
   consumer:
     check: false
 ```
+
+```
+-Dspring.profiles.active=dev -Xms64m -Xmx256m -Xmn256m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=256m -XX:CompressedClassSpaceSize=64m
+```
