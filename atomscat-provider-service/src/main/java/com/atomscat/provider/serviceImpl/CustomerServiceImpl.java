@@ -32,7 +32,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Resource
     private UserMapper userMapper;
 
-
     @Override
     public CustomerInfoResponse getCustomerInfo(CustomerInfoRequest customerInfoRequest) {
         CustomerInfoResponse customerInfoResponse = new CustomerInfoResponse();

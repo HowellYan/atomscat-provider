@@ -73,6 +73,14 @@
         </dependency>
         <!-- 配置nacos中心 -->
 
+        <!-- seata 分布式事务 -->
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-spring-boot-starter</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+        <!-- seata 分布式事务 -->
+
         <!--    elastic-job 定时任务 start   -->
         <dependency>
             <groupId>com.dangdang</groupId>
