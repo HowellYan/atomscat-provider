@@ -21,7 +21,7 @@ nacos:
 seata:
   enabled: true
   application-id: atomscat-seata
-  tx-service-group: atomscat-seata-service-group # 事务群组（可以每个应用独立取名，也可以使用相同的名字）
+  tx-service-group: my_test_tx_group # 事务群组（可以每个应用独立取名，也可以使用相同的名字）
   client:
     rm:
       async-commit-buffer-limit: 10000 # 异步提交缓存队列长度（默认10000）
@@ -68,14 +68,10 @@ seata:
   registry:
     nacos:
       server-addr: 192.168.1.14:8848
-      namespace: 5f5afe75-b943-40dc-ae5a-6f3e9ab24cf8
       cluster: default
     type: nacos
   config:
-    file:
-      name: file.conf
     type: nacos
     nacos:
-      namespace: 5f5afe75-b943-40dc-ae5a-6f3e9ab24cf8
       server-addr: 192.168.1.14:8848
   enable-auto-data-source-proxy: true

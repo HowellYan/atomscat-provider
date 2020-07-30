@@ -8,6 +8,7 @@ import com.atomscat.provider.mapper.UserMapper;
 import com.atomscat.provider.request.CustomerInfoRequest;
 import com.atomscat.provider.response.CustomerInfoResponse;
 import com.atomscat.provider.service.CustomerService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
@@ -63,6 +64,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    @GlobalTransactional(timeoutMills = 300000, name = "atomscat-seata")
     public List<CustomerInfoResponse> test(CustomerInfoRequest customerInfoRequest) {
         log.info(JSONObject.toJSONString(customerInfoRequest));
         List<CustomerInfoResponse> list = new ArrayList<>();
