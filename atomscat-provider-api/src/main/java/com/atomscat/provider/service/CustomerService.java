@@ -16,5 +16,7 @@ public interface CustomerService {
 
     List<CustomerInfoResponse> getCustomerInfoList(CustomerInfoRequest customerInfoRequest);
 
-    List<CustomerInfoResponse> test(CustomerInfoRequest customerInfoRequest);
+    List<CustomerInfoResponse> test(CustomerInfoRequest customerInfoRequest) throws Exception;
+
+    List<CustomerInfoResponse> test2(CustomerInfoRequest customerInfoRequest) throws Exception;
 }

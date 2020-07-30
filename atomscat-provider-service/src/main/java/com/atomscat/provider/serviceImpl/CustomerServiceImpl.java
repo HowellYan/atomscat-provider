@@ -64,15 +64,31 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    @GlobalTransactional(timeoutMills = 300000, name = "atomscat-seata")
-    public List<CustomerInfoResponse> test(CustomerInfoRequest customerInfoRequest) {
+    //@GlobalTransactional
+    public List<CustomerInfoResponse> test(CustomerInfoRequest customerInfoRequest) throws Exception {
         log.info(JSONObject.toJSONString(customerInfoRequest));
         List<CustomerInfoResponse> list = new ArrayList<>();
         CustomerInfoResponse customerInfoResponse = new CustomerInfoResponse();
         customerInfoResponse.setName("test");
         list.add(customerInfoResponse);
+        if (customerInfoRequest.getName().equals("1")) {
+             throw new Exception("异常");
+        }
         return list;
     }
 
+    @Override
+    //@GlobalTransactional
+    public List<CustomerInfoResponse> test2(CustomerInfoRequest customerInfoRequest) throws Exception {
+        log.info(JSONObject.toJSONString(customerInfoRequest));
+        List<CustomerInfoResponse> list = new ArrayList<>();
+        CustomerInfoResponse customerInfoResponse = new CustomerInfoResponse();
+        customerInfoResponse.setName("test");
+        list.add(customerInfoResponse);
+        if (customerInfoRequest.getName().equals("2")) {
+            throw new Exception("异常");
+        }
+        return list;
+    }
 
 }

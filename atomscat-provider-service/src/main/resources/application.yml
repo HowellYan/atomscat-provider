@@ -5,7 +5,7 @@ spring:
 nacos:
   config:
     server-addr: 192.168.1.14:8848
-    namespace: 5f5afe75-b943-40dc-ae5a-6f3e9ab24cf8
+    namespace: e59784dc-e433-4b72-939a-fd5cff8cc0f2
     bootstrap:
       enable: true
     data-id: atomscat-provider.yaml
@@ -20,7 +20,7 @@ nacos:
 
 seata:
   enabled: true
-  application-id: atomscat-seata
+  application-id: atomscat-provider
   tx-service-group: my_test_tx_group # 事务群组（可以每个应用独立取名，也可以使用相同的名字）
   client:
     rm:
